@@ -1,0 +1,61 @@
+<div class="movie-poster-background" [style.backgroundImage]="'url('+'https://image.tmdb.org/t/p/original/'+movieInfo[0].poster_path+')'">
+   <div class="nav-bar">
+        <mat-icon [routerLink]="['/movies']" style="color: white;">keyboard_backspace</mat-icon>
+   </div>
+   <div class="movie-info-container">
+        <h2 class="movie-title">{{movieInfo[0].original_title}}</h2>
+        <div class="movie-rating-duration">
+            <p class="rating">{{movieInfo[0].vote_average}}</p>
+            <p class="release-year-duration">{{movieInfo[0].release_date.split('-')[0]}}</p>
+            <p class="release-year-duration">{{movieInfo[0].runtime}}</p>
+        </div>
+        <p class="overview">{{movieInfo[0].overview}}</p>
+        <div class="movie-extra-details-container">
+            <div class="extra-details">
+                <div class="extra-sub-details">
+                    <p class="extra-details-header">
+                        Release Date
+                    </p>
+                    <p class="extra-details-text">{{movieInfo[0].release_date}}</p>
+                </div>
+                <div class="extra-sub-details">
+                    <p  class="extra-details-header">Cast</p>
+                    <p  class="extra-details-text">Iron Man</p>
+                    <p  class="extra-details-text">Thor</p>
+                    <p  class="extra-details-text">Hulk</p>
+                    <p  class="extra-details-text">Spiderman</p>
+                </div>
+                <div class="extra-sub-details">
+                    <p class="extra-details-header">Writers</p>
+                    <p  class="extra-details-text">Christopher Nolan</p>
+                    <p  class="extra-details-text">James Cameron</p>
+                </div>
+            </div>
+            <div class="extra-details">
+                <div class="extra-sub-details">
+                    <p class="extra-details-header">Genres</p>
+                    <ng-container *ngFor="let genre of getParsedData(movieInfo[0].genres)">
+                        <p class="extra-details-text">
+                            {{genre.name}}
+                        </p>
+                    </ng-container>
+                </div>
+                <div class="extra-sub-details">
+                    <p class="extra-details-header">Type</p>
+                    <p class="extra-details-text">Action</p>
+                </div>
+            </div>
+            <div class="extra-details">
+                <div class="extra-sub-details">
+                    <p class="extra-details-header">Vote Count</p>
+                    <p class="extra-details-text">{{movieInfo[0].vote_count}}</p>
+                </div>
+                <div class="extra-sub-details">
+                    <p class="extra-details-header">Maturity Ratings</p>
+                    <p class="extra-details-text">13+</p>
+                </div>
+            </div>
+        </div>
+   </div>
+
+</div>
