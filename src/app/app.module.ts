@@ -26,6 +26,10 @@ const appRoutes: Routes = [
     path: 'movies',
     loadChildren: './movie-stack/movie-stack.module#MovieListModule'
   },
+  {
+    path: '**',
+    loadChildren: './movie-stack/movie-stack.module#MovieListModule'
+  },
 ];
 
 @NgModule({

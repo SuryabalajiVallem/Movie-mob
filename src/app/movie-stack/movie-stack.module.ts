@@ -14,7 +14,7 @@ import { LazyLoadImageModule,scrollPreset} from 'ng-lazyload-image';
 import { FlexLayoutModule } from '@angular/flex-layout';
 const appRoutes: Routes = [
   {
-    path: '',
+    path: 'movies',
     component: MovieListComponent
   },
   {
